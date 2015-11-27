@@ -1,3 +1,4 @@
+Skýrsla
 23/10:Setti upp Express file fyrir lokaverkefnið, setti inn dagbókarverkefnið mitt og lélegan grunn fyrir innskráningu,
 notaði fyrilestur 22 sem fyrimynd og reyndi að gera login kerfi 
 24/10:Bjó til 2 gagnagrunna í postgresql, einn fyrir notenda og pw og einn fyrir gögn í dagbókinni. 
@@ -9,12 +10,15 @@ gögn af síðunni og notuðu þau til að framkvæma aðgerðir á gagnagrunni,
 Hætti við að hafa plain sem html og umritaði það á jade og fel gögnin sem hidden headder og sæki þau síðan þaðan og nota þau.
 Byrjaði að breyta nýju tökkunum mínum í að gera það sömu og gömlu vista og eyða takkarnir en bara með gögnunum úr gagnagrunninum.
 27/10:Tókst að breyta tökkunum og virkar síðan eins og hún gerði í verkefni 3, kláraði útlit og virkni.
+Settu upp github fyrir verkefnið og bjó til heroku og tengdi við gagnagrunninn.
+
 Ég nota postgresql til að geyma gagnagrunninn.  Í honum eru 2 töflur, ein er fyrir loginið og er í henni username, dagsetning og passsword,
 bakendinn notar salt og hash til að dulkóða og afdulkóða passwordið, bakendinn getur bætt við notendum og passwordum í töfluna, 
-tveir notendur geta ekki heytið það sama, við innskráningu checkar bakendinn hvort gefið notendanafn og password séu rétt.
+tveir notendur geta ekki heitið það sama, við innskráningu checkar bakendinn hvort gefið notendanafn og password séu rétt.
 Hin taflan inniheldur gögn sem dagbókin notar, það er titill, texti og dagsetning.  Á dagbókarsíðunni eru 2 takkar sem vinna með gagnagrunnin.
 Þeir eru vista og eyða, síðan er þannig að það má aðeins hafa eina dagbókarfærslu per titill, vista takkin byrjar því á því að eyða
 úr gagnagrunni gögnum ef til eru gögn með sama titil, og setur síðan ný gögn inn í staðinn. Eyða takkinn eyðir gögnum úr gagnagrunni sem hafa
 sama titil og er í titil glugganum.  Síðan refreshast þegar að ýtt er á þessa takka svo ný gögn koma strax inn.
 Síðan býr til hnappa(buttons) vinstra megin á síðunni sem hægt er að velja til að fá vistaðar færslur, eins hægt að velja færslur til að eyða.
 Gögnin eru geymd í hidden headderum h1,h2 og h3, síðan eru þau sótt og búnir til takkar út frá þeim, ekki viðkvæm gögn, þau eru öll aðgengileg í hnöppunum.
+Herouku slóðin á síðuna er https://lokaverkefni-gpg3.herokuapp.com/?

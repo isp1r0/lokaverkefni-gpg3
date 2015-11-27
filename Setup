@@ -1,0 +1,50 @@
+Setup.
+
+Uppsetning
+
+Stilla gagnagrunn í `.env`
+
+-- Table: users
+
+-- DROP TABLE users;
+
+CREATE TABLE users
+(
+  username text,
+  salt text,
+  hash text,
+  id serial NOT NULL,
+  date timestamp with time zone,
+  CONSTRAINT users_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE users
+  OWNER TO postgres;
+-----------------------------------------------------
+-- Table: entry
+
+-- DROP TABLE entry;
+
+CREATE TABLE entry
+(
+  text text,
+  id serial NOT NULL,
+  "User" text,
+  title text,
+  entrydate text,
+  CONSTRAINT entry_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE entry
+  OWNER TO postgres;
+------------------------------------------------------
+
+bash
+
+
+npm install
+npm start
