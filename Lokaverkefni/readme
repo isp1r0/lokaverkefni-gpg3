@@ -1,0 +1,4 @@
+23/10:Setti upp Express file fyrir lokaverkefnið, setti inn dagbókarverkefnið mitt og lélegan grunn fyrir innskráningu,
+notaði fyrilestur 22 sem fyrimynd og reyndi að gera login kerfi 
+24/10:Bjó til 2 gagnagrunna í postgresql, einn fyrir notenda og pw og einn fyrir gögn í dagbókinni. 
+Tókst að láta notendakerfið virka og náði að sækja og setja inn gögn í gagnagrunninun
