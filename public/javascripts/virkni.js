@@ -23,6 +23,7 @@ function setup(){
   dayte=dayte.split(',');
   var j=tiitle.length-1;
     while(j>=0) {
+      if(tiitle[j]=="") j--;
       faersla.appendChild(el(tiitle[j], texx[j], dayte[j]));
       buaTilTakka(ord.value);
       j--;

@@ -8,11 +8,13 @@ html(lang='is')
   body
     main.container
       .row
+        br
+        br
         h1.hidden=item
         h2.hidden=title
         h3.hidden=dat
       .row
-        .list-group.col-md-2
+        .list-group.col-md-3
           ul.faerslur
         form(method='post', action='/plain')
           .form-group.col-md-7
@@ -20,24 +22,20 @@ html(lang='is')
             br
             textarea#texti.form-control(rows='10', name='texti', placeholder='Kæra dagbók...')
             .row
-              .col-md-3.form-group
-                input.hidden(value='3', name='dataid')
-                button.glyphicon.glyphicon-ok.btn.btn-primary.btn-lg.toggle Vista
-                  form(method='post', action='/plain')
-                  .col-md-offset-4.form-group
-                    input.hidden(value='2', name='dataid')
-                    button.glyphicon.glyphicon-remove.btn.btn-warning Eyða
-      form(action='/')
-        .col-md-offset-10.list-group
-          strong.total 0
-          |  stafir
-          p
-          strong.rem 0
-          |  orð
-          p
-          button.hreinsa.glyphicon.glyphicon-flash.btn.btn-primary.btn-lg.toggle(type='button') HreinsaHTML
-          p
-          button.snua.glyphicon.glyphicon-sunglasses.btn.btn-primary.btn-lg.toggle(type='button') Snúa texta við
-          p
-          button.btn.btn-primary.btn-lg.toggle Logout
-    script(src='/javascripts/virkni.js')
+              .col-md-95.form-group
+                button(name="butt1" value=1).glyphicon.glyphicon-ok.btn.btn-primary.btn-lg.toggle Vista
+                button(name="butt2" value=2).glyphicon.glyphicon-remove.btn.btn-warning.col-md-offset-9 Eyða
+        form(action='/')
+          .col-md-1.col.list-group
+            strong.total 0
+            |  stafir
+            p
+            strong.rem 0
+            |  orð
+            p
+            button.hreinsa.glyphicon.glyphicon-flash.btn.btn-primary.btn-lg.toggle(type='button') HreinsaHTML
+            p
+            button.snua.glyphicon.glyphicon-sunglasses.btn.btn-primary.btn-lg.toggle(type='button') Snúa texta við
+            p
+            button.btn.btn-primary.btn-lg.toggle Logout
+  script(src='/javascripts/virkni.js')

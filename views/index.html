@@ -7,12 +7,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Innskrá</h1>
+        <main class="container">
+            <h1>Innskrá</h1>
             <a href="/create">Búa til notenda</a>
             <form method='post' action='/'>
-            <input type="text" id='username' name='username' value="Notandi">
-            <input type="text" id='password' name='password'>
-            <button>Innskrá</button>
+            <input type="text" id='username' name='username' placeholder="Notandi">
+            <input type="password" id='password' name='password' placeholder="password">
+            <button class = "btn btn-primary btn-sml toggle">Innskrá</button>
             </form>
+        </main>
     </body>
 </html>

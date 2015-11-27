@@ -1,1 +1,5 @@
-﻿DELETE FROM entry WHERE text = '';
+﻿SELECT 
+  * 
+FROM 
+  public.entry, 
+  public.users;

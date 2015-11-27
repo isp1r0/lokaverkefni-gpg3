@@ -19,14 +19,14 @@ module.exports = router;
 
 /** route middlewares **/
 function hvada(req,res,next){
-  var x= req.body.dataid;
-  console.log("lalal"+x)
-  if(x==3){
-    eyda(req,res,next);
+  var x = req.body.butt1;
+  var y = req.body.butt2;
+  if(x==1){
     vista(req,res,next);
   } 
-  if(x==2) eyda(req,res,next);
-  console.log("út")
+  if(y==2){
+    eyda(req,res,next);
+  }
 }
 
 function create(req, res, next){
@@ -37,7 +37,6 @@ function createHandler(req, res, next) {
   var username = req.body.username;
   var password = req.body.password;
 
-  // hér vantar *alla* villumeðhöndlun
   users.createUser(username, password, function (err, status) {
     if (err) {
       console.error(err);
@@ -83,13 +82,28 @@ function eyda(req,res,next){
     if (err || !status) {
       success = false;
     }
+    next();
   });
 }
 
 function vista(req,res,next){
-  var text=req.body.texti;
   var title=req.body.text;
-  var user = req.session.user.username;
+  var text=req.body.texti;
+  if(title=="") return;
+  var user=req.session.user.username;
+  console.log(title)
+  console.log(user)
+    users.deleteFromDatabase(user, title, function (err, status) {
+    if (err) {
+      console.error(err);
+    }
+
+    var success = true;
+
+    if (err || !status) {
+      success = false;
+    }
+  });
   users.insertIntoDatabase(user, title, text, function (err, status) {
     if (err) {
       console.error(err);
